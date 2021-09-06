@@ -186,4 +186,6 @@ Examples:
     doubleOddNumbers([4,4,4,4,4]) // []
 */
 
-function doubleOddNumbers(arr) {}
+function doubleOddNumbers(arr) {
+    return arr.filter(odd => odd%2 !== 0).map(val => val*2);
+}
