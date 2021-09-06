@@ -146,7 +146,7 @@ Examples:
 function find(arr, searchValue) {
     //not sure why this doesn't work:
     //return arr.filter(val => val === searchValue)[0];
-    
+
     return arr.filter(function(val){
         return val === searchValue;
     })[0];
@@ -159,7 +159,9 @@ Examples:
     findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true) // {first: 'Tim', last:"Garcia", isCatOwner: true}
 */
 
-function findInObj(arr, key, searchValue) {}
+function findInObj(arr, key, searchValue) {
+    return arr.filter(val => val[key] === searchValue)[0];
+}
 
 /*
 Write a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercased and lowercased) removed. Every character in the new string should be lowercased.
@@ -170,7 +172,11 @@ Examples:
     removeVowels('ZZZZZZ') // ('zzzzzz')
 */
 
-function removeVowels(str) {}
+function removeVowels(str) {
+    const vowels = 'aeiou';
+    return str.toLowerCase().split('').filter(char => vowels.indexOf(char) === -1).join('');
+    //my note: this one I had to look up to make this neat. I forgot you can add each of these methods onto each other.
+}
 
 /*
 Write a function called doubleOddNumbers which accepts an array and returns a new array with all of the odd numbers doubled (HINT - you can use map and filter to double and then filter the odd numbers).
