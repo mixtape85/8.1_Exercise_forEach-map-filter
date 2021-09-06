@@ -7,7 +7,8 @@ Examples:
 
 */
 function doubleValues(arr){
-    
+    const result = arr.map(val => val *2);
+    return result;
 }
 
 /*
@@ -19,7 +20,8 @@ Examples:
 
 */
 function onlyEvenValues(arr){
-    
+    const result = arr.filter(val => val % 2 === 0);
+    return result;
 }
 
 /*
